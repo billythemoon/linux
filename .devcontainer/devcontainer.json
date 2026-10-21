@@ -1,0 +1,7 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": { "ghcr.io/devcontainers/features/docker-in-docker:2": {} },
+  "forwardPorts": [6901],
+  "portsAttributes": { "6901": { "label": "Kasm", "protocol": "https" } },
+  "postStartCommand": "docker start kasm 2>/dev/null || docker run -d --name kasm --shm-size=512m -p 6901:6901 -e VNC_PW=changeme kasmweb/ubuntu-jammy-desktop:1.16.0"
+}
